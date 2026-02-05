@@ -11,15 +11,24 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Your Characters",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+      appBar: AppBar(title: Text("Your Characters")),
+      body: Container(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Text("Character List"),
+            Text(
+              "Charcter list ",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(
+              "Charcter list ",
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            FilledButton(onPressed: () {}, child: Text("Create New")),
+          ],
         ),
-        centerTitle: true,
-        backgroundColor: Colors.grey[800],
       ),
-      body: Container(padding: EdgeInsets.all(16), child: Text("Home")),
     );
   }
 }
