@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/shared/style_button.dart';
+import 'package:flutter_rpg/shared/style_text.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,21 +13,12 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Your Characters")),
+      appBar: AppBar(title: StyleTitle("Your Characters")),
       body: Container(
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-            Text("Character List"),
-            Text(
-              "Charcter list ",
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            Text(
-              "Charcter list ",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            FilledButton(onPressed: () {}, child: Text("Create New")),
+            StyleButton(onPressed: () {}, child: StyleHeadline("Create New")),
           ],
         ),
       ),
