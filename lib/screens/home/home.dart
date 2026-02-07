@@ -10,6 +10,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List characters = ["mario", "luigi", "peach", "toad", "bowser", "koopa"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +20,19 @@ class _HomeState extends State<Home> {
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: characters.length,
+                itemBuilder: (_, index) {
+                  return Container(
+                    color: Colors.grey,
+                    padding: EdgeInsets.all(40),
+                    margin: EdgeInsets.only(bottom: 40),
+                    child: Text(characters[index]),
+                  );
+                },
+              ),
+            ),
             StyleButton(onPressed: () {}, child: StyleHeadline("Create New")),
           ],
         ),
