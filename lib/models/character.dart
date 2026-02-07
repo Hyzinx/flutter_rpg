@@ -7,6 +7,8 @@ class Character with Status {
   final String slogan;
   final String id;
 
+  bool get isFav => _isFav;
+
   bool _isFav = false;
 
   void toggleIsFav() {

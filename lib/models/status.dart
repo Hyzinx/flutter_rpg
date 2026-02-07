@@ -5,6 +5,22 @@ mixin Status {
   int _skill = 10;
   int _points = 10;
 
+  int get getPoints => _points;
+
+  Map<String, int> get getStatValues => {
+    "Health": _health,
+    "Attack": _attack,
+    "Defence": _defence,
+    "Skill": _skill,
+  };
+
+  List<Map<String, String>> get getStatInFormttedList => [
+    {'title': 'health', 'value': _health.toString()},
+    {'title': 'attack', 'value': _attack.toString()},
+    {'title': 'defence', 'value': _defence.toString()},
+    {'title': 'skill', 'value': _skill.toString()},
+  ];
+
   bool deincreaseChecks(int value) => (value > 5) ? true : false;
 
   void deincreaseHealth() {
