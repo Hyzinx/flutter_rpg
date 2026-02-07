@@ -41,4 +41,10 @@ ThemeData primaryTheme = ThemeData(
       letterSpacing: 2,
     ),
   ),
+  cardTheme: CardThemeData(
+    color:  const Color.fromARGB(255, 46, 46, 46),
+    shape: RoundedRectangleBorder(),
+    shadowColor: Colors.transparent,
+    margin: EdgeInsets.only(bottom: 16),
+  ),
 );
