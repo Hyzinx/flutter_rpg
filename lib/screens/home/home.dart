@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/screens/character_card.dart';
+import 'package:flutter_rpg/screens/create/create.dart';
 import 'package:flutter_rpg/shared/style_button.dart';
 import 'package:flutter_rpg/shared/style_text.dart';
 
@@ -12,7 +13,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,15 @@ class _HomeState extends State<Home> {
                 },
               ),
             ),
-            StyleButton(onPressed: () {}, child: StyleHeadline("Create New")),
+            StyleButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (ctx) => Create()),
+                );
+              },
+              child: StyleHeadline("Create New"),
+            ),
           ],
         ),
       ),
