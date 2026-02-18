@@ -51,14 +51,44 @@ mixin Status {
     }
   }
 
-  void increaseHealth() => _health++;
-  void increaseAttack() => _attack++;
-  void increaseDefence() => _defence++;
-  void increaseSkill() => _skill++;
-
-  void manageTheStat(bool Function() method) {
+  void increaseHealth() {
     if (_points > 0) {
-      method();
+      _health++;
+      _points--;
+    }
+  }
+
+  void increaseAttack() {
+    if (_points > 0) {
+      _attack++;
+      _points--;
+    }
+  }
+
+  void increaseDefence() {
+    if (_points > 0) {
+      _defence++;
+      _points--;
+    }
+  }
+
+  void increaseSkill() {
+    if (_points > 0) {
+      _skill++;
+      _points--;
+    }
+  }
+
+  void manageTheStat(String value, String opration) {
+    switch (value) {
+      case "health":
+        (opration == "+") ? increaseHealth() : deincreaseHealth();
+      case "attack":
+        (opration == "+") ? increaseAttack() : deincreaseAttack();
+      case "defence":
+        (opration == "+") ? increaseDefence() : deincreaseDefence();
+      case "skill":
+        (opration == "+") ? increaseSkill() : deincreaseSkill();
     }
   }
 }

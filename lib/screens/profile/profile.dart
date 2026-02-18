@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/models/character.dart';
+import 'package:flutter_rpg/screens/profile/skill_list.dart';
+import 'package:flutter_rpg/screens/profile/status_table.dart';
+import 'package:flutter_rpg/shared/style_button.dart';
 import 'package:flutter_rpg/shared/style_text.dart';
 import 'package:flutter_rpg/theme.dart';
 
@@ -14,7 +17,7 @@ class Profile extends StatelessWidget {
       appBar: AppBar(title: StyleTitle(character.name)),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               padding: EdgeInsets.all(16),
@@ -60,6 +63,25 @@ class Profile extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              alignment: Alignment.center,
+              child: Column(
+                children: [StatusTable(character), SkillList(character)],
+              ),
+            ),
+
+            StyleButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: StyleHeadline("Character was Saved"),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
+              },
+              child: StyleHeadline("Save Character"),
+            ),
+            SizedBox(height: 20),
           ],
         ),
       ),

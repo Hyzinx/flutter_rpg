@@ -54,7 +54,9 @@ ThemeData primaryTheme = ThemeData(
     labelStyle: TextStyle(color: AppColors.textColor),
     prefixIconColor: AppColors.textColor,
   ),
-  dialogTheme: DialogThemeData(
-    backgroundColor: AppColors.secondaryColor
-  )
+  dialogTheme: DialogThemeData(backgroundColor: AppColors.secondaryColor),
+  snackBarTheme: SnackBarThemeData(
+    backgroundColor: AppColors.secondaryColor,
+    showCloseIcon: true,
+  ),
 );
